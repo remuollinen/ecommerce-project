@@ -1,3 +1,27 @@
 .App {
-	text-align: center;
+  text-align: center;
+}
+
+.main-wrapper {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 80vh;
+}
+.caroussel {
+  width: 500px;
+}
+
+.caroussel-item img {
+  height: 300px;
+  border-radius: 10px;
+  opacity: 0.7;
+}
+¨img:hover {
+  opacity: 1;
+}
+ul {
+  display: none;
 }

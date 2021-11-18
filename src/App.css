@@ -57,22 +57,18 @@ nav ul li a:hover,
 /* ********************** Main ************************* */
 
 .main-wrapper {
-  margin: 1rem 0;
+  margin: 3rem 0;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 80vh;
+  height: 90vh;
+}
+li img {
+  border-radius: 5px;
+  align-items: center;
 }
 .caroussel {
-  width: 500px;
-}
-
-.caroussel-item img {
-  height: 300px;
-  border-radius: 10px;
-  opacity: 0.7;
-}
-img:hover {
-  opacity: 1;
+  width: 90vw;
+  opacity: 0.8;
 }

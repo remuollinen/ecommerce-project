@@ -57,32 +57,28 @@ nav ul li a:hover,
 /* ********************** Main ************************* */
 
 .main-wrapper {
-  margin: 0 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  /* height: 85vh; */
-  /* padding: 2rem 0; */
+	margin: 0 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
 li img {
-  /* border-radius: 5px; */
-  height: 85vh;
-  align-items: center;
+	height: 85vh;
+	align-items: center;
 }
 .caroussel {
-  width: 100vw;
-  opacity: 0.8;
+	width: 100vw;
+	opacity: 0.8;
 }
 
 /* ********************** Footer ************************* */
 
 .contacts-header {
 	color: white;
-	margin: 1rem;
-	padding: 1rem;
 }
 .contacts-wrapper {
+	padding: 1rem;
 	background-color: #222;
 }
 

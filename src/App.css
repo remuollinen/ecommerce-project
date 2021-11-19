@@ -91,6 +91,8 @@ li img {
   font-style: italic;
   font-size: 3.5rem;
   font-weight: bold;
+  text-shadow: #000 0px 0px 4px;
+  -webkit-font-smoothing: antialiased;
 }
 .welcome-section button {
   font-family: "Roboto", sans-serif;
@@ -133,6 +135,8 @@ li img {
   font-style: italic;
   color: rgb(255, 217, 0);
   font-weight: bold;
+  text-shadow: #000 0px 0px 4px;
+  -webkit-font-smoothing: antialiased;
 }
 .item-container .button:hover {
   background-color: rgb(180, 161, 52);

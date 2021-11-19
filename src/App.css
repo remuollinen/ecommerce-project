@@ -117,8 +117,7 @@ li img {
 .item-container .button {
   position: absolute;
   top: 75%;
-  left: 40%;
-
+  left: 42%;
   background-color: rgba(180, 173, 173, 0.9);
   color: white;
   font-size: 2rem;
@@ -126,7 +125,7 @@ li img {
   border: none;
   cursor: pointer;
   border-radius: 5px;
-  box-shadow: 1px 1px 5px black;
+  box-shadow: 1px 1px 10px black;
   transition: 0.2s ease-in-out 0s;
 }
 .button span {

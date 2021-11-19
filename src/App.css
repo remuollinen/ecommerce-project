@@ -57,20 +57,22 @@ nav ul li a:hover,
 /* ********************** Main ************************* */
 
 .main-wrapper {
-	margin: 3rem 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	height: 90vh;
+  margin: 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* height: 85vh; */
+  /* padding: 2rem 0; */
 }
 li img {
-	border-radius: 5px;
-	align-items: center;
+  /* border-radius: 5px; */
+  height: 85vh;
+  align-items: center;
 }
 .caroussel {
-	width: 90vw;
-	opacity: 0.8;
+  width: 100vw;
+  opacity: 0.8;
 }
 
 /* ********************** Footer ************************* */

@@ -6,7 +6,7 @@ import Item from "./Item";
 class Caroussel extends Component {
   render() {
     const itemDisplay = items.map((item) => (
-      <Item key={item.id} name={item.brand} />
+      <Item key={item.id} name={item.brand} category={item.category} />
     ));
     return (
       <Carousel
@@ -16,6 +16,12 @@ class Caroussel extends Component {
         className="caroussel"
         exact="true"
       >
+        <div className="welcome-section">
+          <p>
+            Welcome to our <span>webShop</span>
+          </p>
+          <button>Go to shop</button>
+        </div>
         {itemDisplay}
       </Carousel>
     );

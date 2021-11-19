@@ -108,6 +108,8 @@ li img {
   border-radius: 5px;
   box-shadow: 1px 1px 5px black;
   transition: 0.2s ease-in-out 0s;
+  text-shadow: #fff 0px 0px 5px;
+  -webkit-font-smoothing: antialiased;
 }
 .welcome-section button:hover {
   background-color: rgb(180, 161, 52);

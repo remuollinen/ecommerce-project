@@ -8,16 +8,16 @@ const Header = () => {
 			<nav>
 				<ul>
 					<li>
-						<NavLink to="/category1">CAT</NavLink>
+						<NavLink to="/shop/category1">CAT</NavLink>
 					</li>
 					<li>
-						<NavLink to="/category2">CAT</NavLink>
+						<NavLink to="/shop/category2">CAT</NavLink>
 					</li>
 					<li>
-						<NavLink to="/category3">CAT</NavLink>
+						<NavLink to="/shop/category3">CAT</NavLink>
 					</li>
 					<li>
-						<NavLink to="/category4">CAT</NavLink>
+						<NavLink to="/shop/category4">CAT</NavLink>
 					</li>
 				</ul>
 				<div className="logo-wrapper">

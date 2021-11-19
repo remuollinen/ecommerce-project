@@ -1,57 +1,57 @@
 .App {
-  text-align: center;
+	text-align: center;
 }
 
 /* ********************** Header ************************* */
 
 nav {
-  height: 15vh;
-  background-color: #222;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+	height: 15vh;
+	background-color: #222;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 nav ul {
-  display: flex;
-  align-items: center;
-  list-style: none;
-  margin: 0 2rem;
+	display: flex;
+	align-items: center;
+	list-style: none;
+	margin: 0 2rem;
 }
 
 nav ul li a {
-  margin: 0 1rem;
-  text-decoration: none;
-  color: white;
-  font-size: 1.1rem;
-  font-weight: 500;
-  padding: 0.3rem;
-  transition: all 0.2s ease-in-out;
+	margin: 0 1rem;
+	text-decoration: none;
+	color: white;
+	font-size: 1.1rem;
+	font-weight: 500;
+	padding: 0.3rem;
+	transition: all 0.2s ease-in-out;
 }
 
 .logo-wrapper {
-  height: 5rem;
-  width: 5rem;
-  background-color: rgb(255, 217, 0);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
+	height: 5rem;
+	width: 5rem;
+	background-color: rgb(255, 217, 0);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 50%;
 }
 
 .logo-wrapper a {
-  text-decoration: none;
-  color: #222;
+	text-decoration: none;
+	color: #222;
 }
 
 .icon {
-  font-size: 2rem;
-  transition: all 0.2s ease-in-out;
+	font-size: 2rem;
+	transition: all 0.2s ease-in-out;
 }
 
 nav ul li a:hover,
 .active {
-  color: rgb(255, 217, 0);
+	color: rgb(255, 217, 0);
 }
 
 /* ********************** Main ************************* */
@@ -75,78 +75,75 @@ li img {
   opacity: 0.8;
 }
 
-
 /* ********************** Footer ************************* */
 
-
 .contacts-header {
-  color: white;
-  margin: 1rem;
-  padding: 1rem;
+	color: white;
+	margin: 1rem;
+	padding: 1rem;
 }
 .contacts-wrapper {
-  background-color: #222;
+	background-color: #222;
 }
 
 .footer-nav {
-  display: flex;
-  flex-direction: column;
-  margin: 1rem;
-  padding: 1rem;
-  justify-content: space-between;
-  align-items: center;
+	display: flex;
+	flex-direction: column;
+	margin: 1rem;
+	padding: 1rem;
+	justify-content: space-between;
+	align-items: center;
 }
 
 .footer-nav ul li a {
-  margin-left: 5rem;
-  margin-right: 5rem;
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: white;
+	margin-left: 5rem;
+	margin-right: 5rem;
+	font-size: 1.1rem;
+	font-weight: 500;
+	color: white;
 }
 
 nav ul li a:hover,
 .active {
-  color: rgb(255, 217, 0);
+	color: rgb(255, 217, 0);
 }
 
 .some-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  background-color: #222;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	background-color: #222;
 }
 
 .some-icon {
-  font-size: 2rem;
-  transition: all 0.2s ease-in-out;
-  margin: 2rem;
-  margin-top: -5rem;
-  transition: all 0.2s ease-in-out;
+	font-size: 2rem;
+	transition: all 0.2s ease-in-out;
+	margin: 2rem;
+	margin-top: -5rem;
+	transition: all 0.2s ease-in-out;
 }
 
 .some-icon:hover,
 .active {
-  transform: translate(4px, 4px);
-  color: rgb(255, 217, 0);
+	transform: translate(4px, 4px);
+	color: rgb(255, 217, 0);
 }
 
 .payment-wrapper {
-  padding-left: 60rem;
-  background-color: #222;
+	padding-left: 60rem;
+	background-color: #222;
 }
 
 .payment-icon {
-  color: white;
-  margin: 1.5rem;
-  height: 1.5rem;
-  width: 1.5rem;
+	color: white;
+	margin: 1.5rem;
+	height: 1.5rem;
+	width: 1.5rem;
 }
 
 .copyright {
-  color: white;
-  font-size: 0.8rem;
-  padding-bottom: 2rem;
+	color: white;
+	font-size: 0.8rem;
+	padding-bottom: 2rem;
 }
-

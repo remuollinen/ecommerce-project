@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./ProductsList.css";
 
-export default class ProductsList extends Component {
+class ProductsList extends Component {
 	state = {
 		data: [],
 	};
@@ -9,28 +9,39 @@ export default class ProductsList extends Component {
 	componentDidMount() {
 		fetch("https://fakestoreapi.com/products")
 			.then((res) => res.json())
-			.then((json) => {
-				this.setState({ data: json });
-			});
+			.then((json) => this.setState({ data: json }));
 	}
 
 	render() {
 		return (
-			<div className="products-container">
-				{this.state.data.map((prod) => {
-					return (
-						<div key={prod.id} className="product-card">
-							<div className="image-wrapper">
-								<img src={prod.image} alt={prod.title} />
+			<div className="products-page">
+				<div className="sidebar">
+					<h2>Categories</h2>
+					<ul>
+						<li>Category</li>
+						<li>Category</li>
+						<li>Category</li>
+						<li>Category</li>
+					</ul>
+				</div>
+				<div className="products-container">
+					{this.state.data.map((product) => {
+						return (
+							<div className="product-card" key={product.id}>
+								<div className="image-wrapper">
+									<img src={product.image} alt={product.title} />
+								</div>
+								<div className="card-content">
+									<h3>{product.title}</h3>
+									<p>{product.price} €</p>
+								</div>
 							</div>
-							<div className="card-text">
-								<h2>{prod.title}</h2>
-								<p>{prod.price} €</p>
-							</div>
-						</div>
-					);
-				})}
+						);
+					})}
+				</div>
 			</div>
 		);
 	}
 }
+
+export default ProductsList;

@@ -20,9 +20,13 @@ export default class ProductsList extends Component {
 				{this.state.data.map((prod) => {
 					return (
 						<div key={prod.id} className="product-card">
-							<img src={prod.image} alt={prod.title} />
-							<h2>{prod.title}</h2>
-							<p>{prod.price} €</p>
+							<div className="image-wrapper">
+								<img src={prod.image} alt={prod.title} />
+							</div>
+							<div className="card-text">
+								<h2>{prod.title}</h2>
+								<p>{prod.price} €</p>
+							</div>
 						</div>
 					);
 				})}

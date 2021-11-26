@@ -1,11 +1,11 @@
 import "./App.css";
-import "./components/Cart.css";
+import "./components/Cart/Cart.css";
 import Header from "./components/Header";
 import Main from "./components/LandingPage/Main";
 import ProductsList from "./components/AllProducts/ProductsList";
 import Footer from "./components/Footer";
 import { BrowserRouter as Router } from "react-router-dom";
-import Cart from "./components/Cart";
+import Cart from "./components/Cart/Cart";
 import { useState } from "react";
 
 function App() {

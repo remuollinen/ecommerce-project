@@ -1,5 +1,4 @@
 import "./App.css";
-import "./components/Cart/Cart.css";
 import Header from "./components/Header";
 import Main from "./components/LandingPage/Main";
 import ProductsList from "./components/AllProducts/ProductsList";
@@ -13,6 +12,22 @@ function App() {
     // for testing purposes, remove the object and leave the array empty
     {
       id: 3,
+      image: "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
+      price: 55.99,
+      rating: { rate: 4.7, count: 500 },
+      title: "Mens Cotton Jacket",
+      quantity: 1,
+    },
+    {
+      id: 2,
+      image: "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
+      price: 55.99,
+      rating: { rate: 4.7, count: 500 },
+      title: "Mens Cotton Jacket",
+      quantity: 1,
+    },
+    {
+      id: 1,
       image: "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
       price: 55.99,
       rating: { rate: 4.7, count: 500 },
@@ -37,14 +52,31 @@ function App() {
       setCartItems([...cartItems, { ...product, quantity: 1 }]);
     }
   };
-
+  const removeItemHanlder = (product) => {
+    const productExist = cartItems.find((item) => item.id === product.id);
+    if (productExist.quantity === 1) {
+      setCartItems(cartItems.filter((item) => item.id !== product.id));
+    } else {
+      setCartItems(
+        cartItems.map((item) =>
+          item.id === product.id
+            ? { ...productExist, quantity: productExist.quantity - 1 }
+            : item
+        )
+      );
+    }
+  };
   return (
     <div className="App">
       <Router>
         <Header />
-        <Main />
-        <ProductsList />
-        <Cart cartItems={cartItems} addItem={addItemHandler} />
+        {/* <Main />
+        <ProductsList /> */}
+        <Cart
+          cartItems={cartItems}
+          addItem={addItemHandler}
+          removeItem={removeItemHanlder}
+        />
         <Footer />
       </Router>
     </div>

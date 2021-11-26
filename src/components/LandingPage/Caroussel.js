@@ -3,6 +3,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import { items } from "./items";
 import Item from "./Item";
+
 class Caroussel extends Component {
   render() {
     const itemDisplay = items.map((item) => (

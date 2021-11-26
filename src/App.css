@@ -153,6 +153,7 @@ li img {
   color: white;
 }
 .contacts-wrapper {
+  /* remove the height to get back the original layout => creates conflict when the main is expended*/
   height: 15vh;
   padding: 1rem;
   background-color: #222;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { BiEnvelope } from "react-icons/bi";
 import { BsInstagram, BsFacebook, BsPaypal } from "react-icons/bs";
 import { SiVisa, SiKlarna, SiGooglepay } from "react-icons/si";
@@ -29,19 +29,19 @@ const Footer = () => {
                         <nav>
                             <ul>
                                 <li>
-                                    <NavLink  to="Instagram">
+                                    <Link  to="Instagram">
                                     <BsInstagram className="some-icon" />
-                                    </NavLink >
+                                    </Link >
                                 </li>
                                 <li>
-                                    <NavLink  to="Facebook">
+                                    <Link  to="Facebook">
                                     <BsFacebook className="some-icon" />
-                                    </NavLink >
+                                    </Link >
                                 </li>
                                 <li>
-                                    <NavLink  to="Mail" >
+                                    <Link  to="Mail" >
                                     <BiEnvelope className="some-icon" />
-                                    </NavLink >
+                                    </Link >
                                 </li>
                             </ul>
                         </nav>

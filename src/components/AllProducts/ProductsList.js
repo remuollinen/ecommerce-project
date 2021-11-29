@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./ProductsList.css";
+// import { Link } from 'react-router-dom';
 
 class ProductsList extends Component {
 	state = {
@@ -28,8 +29,8 @@ class ProductsList extends Component {
 					{this.state.data.map((product) => {
 						return (
 							<div className="product-card" key={product.id}>
-								<div className="image-wrapper">
-									<img src={product.image} alt={product.title} />
+								<div className="image-wrapper" >
+										<img src={product.image} alt={product.title} />
 								</div>
 								<div className="card-content">
 									<h3>{product.title}</h3>
@@ -43,5 +44,11 @@ class ProductsList extends Component {
 		);
 	}
 }
+
+{/* <div onClick={() => console.log('you clicked me')}>
+<Link to="/details">
+<img src={product.image} />
+</Link>
+</div> */}
 
 export default ProductsList;

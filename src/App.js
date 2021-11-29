@@ -4,6 +4,7 @@ import Main from "./components/LandingPage/Main";
 import ProductsList from "./components/AllProducts/ProductsList";
 import Footer from "./components/Footer";
 import { BrowserRouter as Router } from "react-router-dom";
+import SingleProduct from "./components/SingleProduct/SingleProduct";
 
 function App() {
 	return (
@@ -11,7 +12,8 @@ function App() {
 			<Router>
 				<Header />
 				{/* <Main /> */}
-				<ProductsList />
+				{/* <ProductsList /> */}
+				<SingleProduct />
 				<Footer />
 			</Router>
 		</div>

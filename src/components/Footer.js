@@ -70,9 +70,7 @@ const Footer = () => {
                 <p className="copyright"><small>Copyright &copy; The GitMen 2021</small></p>
                 </div>
             </div>
-            
         );
     }
-
 
 export default Footer;

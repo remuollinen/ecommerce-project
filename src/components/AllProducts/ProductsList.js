@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./ProductsList.css";
+// import { Link } from 'react-router-dom';
 
 class ProductsList extends Component {
   state = {
@@ -14,6 +15,7 @@ class ProductsList extends Component {
         console.log(this.state.data);
       });
   }
+
 
   render() {
     return (
@@ -46,5 +48,11 @@ class ProductsList extends Component {
     );
   }
 }
+
+{/* <div onClick={() => console.log('you clicked me')}>
+<Link to="/details">
+<img src={product.image} />
+</Link>
+</div> */}
 
 export default ProductsList;

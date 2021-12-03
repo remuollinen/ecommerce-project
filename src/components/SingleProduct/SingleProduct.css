@@ -38,32 +38,57 @@
 }
 
 .product-description p {
-  padding-bottom: 2rem;
+  margin-bottom: 5rem;
   text-align: left;
 }
 
-.rating {
-  text-align: center;
-  font-weight: bold;
-  font-size: 24px;
+.single-product-rating {
   width: 5rem;
   height: 5rem;
   border-radius: 50%;
   background-color: #222;
-  color: rgb(250, 202, 45);
   align-items: center;
   justify-content: center;
   display: flex;
-  margin-left: 10rem;
+  margin-left: 12rem; 
   margin-bottom: 5rem;
 }
 
-.reviews {
-  text-align: left;
-  font-size: 16px;
-  margin-left: 17rem;
-  margin-top: -8rem;
-  padding-bottom: 8rem;
+.single-product-rating-header {
+    text-align: left;
+    margin-left: 2rem;
+    padding-right: 2rem;
+    margin-bottom: 3rem;
+}
+
+.single-product-rating p {
+    font-weight: bold;
+    font-size: 24px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: rgb(250, 202, 45);
+}
+
+.single-product-reviews {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.single-product-reviews-header {
+    text-align: left;
+    margin-left: 2rem;
+    padding-right: 2rem;
+    margin-bottom: 3rem;
+}
+
+.single-product-reviews p {
+    text-align: left;
+    font-size: 16px;
+    /* margin-left: 5rem; */
+    /* margin-top: -8rem; */
+    padding-bottom: 5rem;
 }
 
 #product-right {

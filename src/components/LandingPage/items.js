@@ -1,3 +1,5 @@
+import ProductsList from "../AllProducts/ProductsList";
+
 export let items = [
   { id: 1, category: "phones", price: 1000, brand: "iphone" },
   { id: 2, category: "cars", price: 18000, brand: "bmw" },

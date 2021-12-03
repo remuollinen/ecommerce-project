@@ -10,23 +10,23 @@ const Cart = (props) => {
   return (
     <div className="cart-container">
       {cartItems.length === 0 && (
-        <div>
+        <div className="cart-empty">
           <p>Cart is empty</p>
         </div>
       )}
-      <div className="items-container">
+      <div className="cart-items-container">
         <h2>Cart</h2>
-        <div className="items">
+        <div className="cart-items">
           {cartItems.map((item) => (
-            <div key={item.id} className="item-details">
-              <div className="image-title-wrapper">
-                <div className="item-title">{item.title}</div>
+            <div key={item.id} className="cart-item-details">
+              <div className="cart-image-title-wrapper">
+                <div className="cart-item-title">{item.title}</div>
                 <img src={item.image} alt={item.title}></img>
               </div>
 
-              <div className="price-quantity">
+              <div className="cart-price-quantity">
                 <span>{item.quantity}</span> x <span>{item.price}</span> $
-                <div className="add-Button">
+                <div className="cart-add-Button">
                   <button onClick={() => addItem(item)}>+</button>
                   <button onClick={() => removeItem(item)}>-</button>
                 </div>
@@ -35,7 +35,7 @@ const Cart = (props) => {
           ))}
         </div>
       </div>
-      <div className="sub-total">
+      <div className="cart-sub-total">
         {cartItems.length !== 0 && <div> Your Sub-total : {subTotal}</div>}
         <div className="go-to-payment">
           <button> Go to payment </button>

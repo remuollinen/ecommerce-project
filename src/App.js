@@ -4,6 +4,7 @@ import Main from "./components/LandingPage/Main";
 import ProductsList from "./components/AllProducts/ProductsList";
 import Footer from "./components/Footer";
 import { BrowserRouter as Router } from "react-router-dom";
+import SingleProduct from "./components/SingleProduct/SingleProduct";
 import Cart from "./components/Cart/Cart";
 import { useState } from "react";
 
@@ -70,13 +71,14 @@ function App() {
     <div className="App">
       <Router>
         <Header />
-        {/* <Main />
-        <ProductsList /> */}
-        <Cart
+        {/* <Main /> */}
+        <ProductsList />
+        {/* <SingleProduct /> */}
+        {/* <Cart
           cartItems={cartItems}
           addItem={addItemHandler}
           removeItem={removeItemHanlder}
-        />
+        /> */}
         <Footer />
       </Router>
     </div>

@@ -72,8 +72,8 @@ function App() {
       <Router>
         <Header />
         {/* <Main /> */}
-        <ProductsList />
-        {/* <SingleProduct /> */}
+        {/* <ProductsList /> */}
+        <SingleProduct />
         {/* <Cart
           cartItems={cartItems}
           addItem={addItemHandler}

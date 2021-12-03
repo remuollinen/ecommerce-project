@@ -1,10 +1,5 @@
 import React, { Component } from "react";
 import "./SingleProduct.css";
-import axios from "axios";
-
-function getSingleProduct(productId) {
-	return axios.get(`https://fakestoreapi.com/products/${productId}`);
-}
 
 class SingleProduct extends Component {
 	state = {
@@ -12,9 +7,13 @@ class SingleProduct extends Component {
 	};
 
 	componentDidMount() {
-		Promise.all([getSingleProduct(this.props.params.id)]).then((res) =>
-			this.setState({ singleProduct: res[0] })
-		);
+		fetch(`https://fakestoreapi.com/products/${this.props.params.id}`)
+			.then((res) => res.json())
+			.then((json) =>
+				this.setState({
+					singleProduct: json,
+				})
+			);
 	}
 
 	render() {
@@ -31,12 +30,14 @@ class SingleProduct extends Component {
 						<h2>Description</h2>
 						<p> {this.state.singleProduct.description}</p>
 					</div>
-					<h3 className="single-product-rating-header">Product rating: </h3>
-					<div className="single-product-rating">
-						<p>{this.state.singleProduct.rating?.rate}</p>
-					</div>
-					<div className="single-product-reviews">
-						<p>{this.state.singleProduct.rating?.count} reviews</p>
+					<h2 className="single-product-rating-header">Product rating: </h2>
+					<div className="rating-and-review-wrapper">
+						<div className="single-product-rating">
+							<p>{this.state.singleProduct.rating?.rate}</p>
+						</div>
+						<div className="single-product-reviews">
+							<p>{this.state.singleProduct.rating?.count} reviews</p>
+						</div>
 					</div>
 				</div>
 				<div id="product-right">
@@ -50,7 +51,12 @@ class SingleProduct extends Component {
 						/>
 					</div>
 					<div className="button-wrapper-back">
-						<button className="back-to-products">Back to products</button>
+						<button
+							className="back-to-products"
+							onClick={() => this.props.navigate(-1)}
+						>
+							Back to products
+						</button>
 					</div>
 				</div>
 			</div>

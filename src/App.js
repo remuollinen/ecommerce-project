@@ -8,18 +8,19 @@ import {
 	Routes,
 	Route,
 	useParams,
+	useNavigate,
 } from "react-router-dom";
 import SingleProduct from "./components/SingleProduct/SingleProduct";
 import Cart from "./components/Cart/Cart";
 import { useState } from "react";
 
-const RouteWrapper = (props) => {
+function RouteWrapper(props) {
 	const params = useParams();
-	// const navigate = useNavigate();
-	return <SingleProduct params={params} {...props} />;
-};
+	const navigate = useNavigate();
+	return <SingleProduct params={params} {...props} navigate={navigate} />;
+}
 
-function App() {
+const App = () => {
 	const [cartItems, setCartItems] = useState([
 		// for testing purposes, remove the object and leave the array empty
 		{
@@ -84,9 +85,8 @@ function App() {
 				<Header />
 				<Routes>
 					<Route index element={<Main />} />
-					<Route path="/shop" element={<ProductsList />}>
-						<Route path="shop/id" element={<RouteWrapper />} />
-					</Route>
+					<Route path="/shop" element={<ProductsList />} />
+					<Route path="shop/:id" element={<RouteWrapper />} />
 					<Route
 						path="/cart"
 						element={
@@ -102,6 +102,6 @@ function App() {
 			</Router>
 		</div>
 	);
-}
+};
 
 export default App;

@@ -4,7 +4,7 @@ import "./ProductsList.css";
 
 const ProductCard = ({ id, image, title, price }) => {
 	return (
-		<Link to={id} className="product-card" key={id}>
+		<Link to={`${id}`} className="product-card">
 			<div className="image-wrapper">
 				<img src={image} alt={title} />
 			</div>

@@ -42,7 +42,7 @@ const Cart = (props) => {
           {cartItems.length !== 0 && (
             <div className="cart-non-empty">
               <div className="cart-subtotal">
-                Your Sub-total : <span>{subTotal} €</span>
+                Your Subtotal : <span>{subTotal} €</span>
               </div>
               <div className="go-to-payment">
                 <button> Go to payment </button>

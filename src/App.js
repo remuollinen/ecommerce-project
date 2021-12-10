@@ -21,36 +21,8 @@ function RouteWrapper(props) {
 }
 
 const App = () => {
-  const [cartItems, setCartItems] = useState([
-    // for testing purposes, remove the object and leave the array empty
-    {
-      id: 3,
-      image: "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
-      price: 55.99,
-      rating: { rate: 4.7, count: 500 },
-      title: "Mens Cotton Jacket",
-      quantity: 1,
-    },
-    {
-      id: 2,
-      image: "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
-      price: 55.99,
-      rating: { rate: 4.7, count: 500 },
-      title: "Mens Cotton Jacket",
-      quantity: 1,
-    },
-    {
-      id: 1,
-      image: "https://fakestoreapi.com/img/71li-ujtlUL._AC_UX679_.jpg",
-      price: 55.99,
-      rating: { rate: 4.7, count: 500 },
-      title: "Mens Cotton Jacket",
-      quantity: 1,
-    },
-  ]); // used the hooks for simplicity purposes
+  const [cartItems, setCartItems] = useState([]);
 
-  // a function that can be used both in the cart to increase the quantity and
-  // also in single product component to add the product to cart
   const addItemHandler = (product) => {
     const productExist = cartItems.find((item) => item.id === product.id);
     if (productExist) {
@@ -79,6 +51,10 @@ const App = () => {
       );
     }
   };
+  const getSingleProductData = (product) => {
+    setCartItems((oldState) => [{ ...product, quantity: 1 }, ...oldState]);
+  };
+
   return (
     <div className="App">
       <Router>
@@ -86,7 +62,10 @@ const App = () => {
         <Routes>
           <Route index element={<Main />} />
           <Route path="/shop" element={<ProductsList />} />
-          <Route path="shop/:id" element={<RouteWrapper />} />
+          <Route
+            path="shop/:id"
+            element={<RouteWrapper getProductData={getSingleProductData} />}
+          />
           <Route
             path="/cart"
             element={

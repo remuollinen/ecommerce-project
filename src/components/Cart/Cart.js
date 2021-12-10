@@ -7,7 +7,7 @@ const Cart = (props) => {
     (actual, cummulator) => actual + cummulator.price * cummulator.quantity,
     0
   );
-  // console.log(subTotal);
+
   return (
     <div className="cart-container">
       <h2>Cart</h2>
@@ -27,7 +27,7 @@ const Cart = (props) => {
 
               <div className="cart-price-quantity">
                 <div className="cart-price-details">
-                  <span>{item.quantity}</span> x <span>{item.price}</span> $
+                  <span>{item.quantity}</span> x <span>{item.price}</span> €
                 </div>
                 <div className="cart-add-Button">
                   <button onClick={() => addItem(item)}>+</button>
@@ -42,7 +42,7 @@ const Cart = (props) => {
           {cartItems.length !== 0 && (
             <div className="cart-non-empty">
               <div className="cart-subtotal">
-                Your Subtotal : <span>{subTotal} €</span>
+                Your Subtotal : <span>{subTotal.toFixed(2)} €</span>
               </div>
               <div className="go-to-payment">
                 <button> Go to payment </button>

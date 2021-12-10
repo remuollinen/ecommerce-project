@@ -27,7 +27,7 @@ const Cart = (props) => {
 
               <div className="cart-price-quantity">
                 <div className="cart-price-details">
-                  <span>{item.quantity}</span> x <span>{item.price}</span> $
+                  <span>{item.quantity}</span> x <span>{item.price}</span> €
                 </div>
                 <div className="cart-add-Button">
                   <button onClick={() => addItem(item)}>+</button>

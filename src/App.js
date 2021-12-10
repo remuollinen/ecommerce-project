@@ -51,6 +51,10 @@ const App = () => {
       );
     }
   };
+  const getSingleProductData = (product) => {
+    setCartItems((oldState) => [{ ...product, quantity: 1 }, ...oldState]);
+  };
+
   return (
     <div className="App">
       <Router>
@@ -58,7 +62,10 @@ const App = () => {
         <Routes>
           <Route index element={<Main />} />
           <Route path="/shop" element={<ProductsList />} />
-          <Route path="shop/:id" element={<RouteWrapper />} />
+          <Route
+            path="shop/:id"
+            element={<RouteWrapper getProductData={getSingleProductData} />}
+          />
           <Route
             path="/cart"
             element={

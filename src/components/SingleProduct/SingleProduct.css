@@ -85,9 +85,9 @@
 .single-product-reviews p {
 	text-align: left;
 	font-size: 16px;
-	/* margin-left: 5rem; */
-	/* margin-top: -8rem; */
-	/* padding-bottom: 5rem; */
+	margin-left: 5rem;
+	margin-top: -8rem;
+	padding-bottom: 5rem;
 }
 
 #product-right {

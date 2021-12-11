@@ -10,7 +10,6 @@ const Cart = (props) => {
 
   return (
     <div className="cart-container">
-      <h2>Cart</h2>
       {cartItems.length === 0 && (
         <div className="cart-empty">
           <p>Cart is empty</p>
@@ -20,18 +19,28 @@ const Cart = (props) => {
         <div className="cart-items">
           {cartItems.map((item) => (
             <div key={item.id} className="cart-item-details">
-              <div className="cart-image-title">
-                <h4>{item.title}</h4>
-                <img src={item.image} alt={item.title}></img>
+              <img src={item.image} alt={item.title}></img>
+              <div className="card-item-title-price">
+                <p>{item.title.split(" ").slice(0, 4).join(" ")}</p>
+                <span className="card-item-price">{item.price} €</span>
               </div>
 
-              <div className="cart-price-quantity">
-                <div className="cart-price-details">
-                  <span>{item.quantity}</span> x <span>{item.price}</span> €
-                </div>
-                <div className="cart-add-Button">
-                  <button onClick={() => addItem(item)}>+</button>
-                  <button onClick={() => removeItem(item)}>-</button>
+              <div className="cart-quantity">
+                <p>Quantity</p>
+                <div className="cart-buttons-area">
+                  <button
+                    className="cart-buttons-area-button"
+                    onClick={() => addItem(item)}
+                  >
+                    +
+                  </button>
+                  <p>{item.quantity}</p>
+                  <button
+                    className="cart-buttons-area-button"
+                    onClick={() => removeItem(item)}
+                  >
+                    -
+                  </button>
                 </div>
               </div>
             </div>
@@ -42,20 +51,20 @@ const Cart = (props) => {
           {cartItems.length !== 0 && (
             <div className="cart-non-empty">
               <div className="cart-subtotal">
-                Your Subtotal : <span>{subTotal.toFixed(2)} €</span>
+                <div className="cart-subtotal-header">Subtotal</div>
+                <p>{subTotal.toFixed(2)} €</p>
               </div>
               <div className="go-to-payment">
-                <button> Go to payment </button>
-              </div>
-              <div className="cart-back-to-list">
-                <Link to={"/shop"}> Keep shopping </Link>
+                <button> CHECKOUT </button>
               </div>
             </div>
           )}
         </div>
       </div>
-      <div className="cart-back-to-list">
-        <Link to={"/shop"}> Keep shopping </Link>
+      <div className="cart-back-to-list-wrapper">
+        <div className="cart-back-to-list">
+          <Link to={"/shop"}> Back to products </Link>
+        </div>
       </div>
     </div>
   );

@@ -14,122 +14,150 @@
   font-style: italic;
 }
 .cart-body {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  display: flex;
+  justify-content: space-between;
+  margin: 5rem 2rem;
 }
-
-.cart-items {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-}
+/* ******************* cart-items ********************* */
 .cart-item-details {
-  width: 200px;
-  height: 250px;
-  border: 2px solid #222;
-  box-shadow: 0 0 5px #222;
+  display: flex;
+  width: 50rem;
+  height: 12rem;
+  border: 1px solid #222;
+  box-shadow: 0 0 0.12rem #222;
   margin: 1rem;
+  margin-top: 0;
+  margin-left: 2rem;
+  padding: 0 1rem;
+  align-items: center;
+  justify-content: space-around;
 }
-.cart-image-title {
-  height: 50%;
+.cart-item-details img {
+  height: 7rem;
+  width: auto;
+  box-shadow: 0 0 0.1rem #222;
+  border: #222 solid 1px;
+  padding: 1rem;
 }
-.cart-image-title img {
-  height: 50%;
-}
-.cart-price-quantity {
-  margin-top: 2rem;
-  background-color: #222;
-  height: 30%;
-}
-.cart-price-details {
-  color: #ffcc70;
-  margin: 0;
-  padding: 0.5rem 0;
+.card-item-title-price p {
   font-size: 1.3rem;
+  font-weight: bolder;
 }
-.cart-add-Button {
+.card-item-price {
+  font-size: 1.8rem;
+  font-weight: 1000;
+  color: #ffc75f;
+}
+.cart-quantity {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.cart-buttons-area {
   display: flex;
   align-items: center;
-  justify-content: center;
-}
-.cart-add-Button button {
-  border: 1px solid black;
-  color: black;
-  border-radius: 5px;
-  width: 2.5rem;
-  height: 1rem;
-  font-size: 16px;
-  font-weight: bold;
-  background-color: white;
-  cursor: pointer;
-  margin: 0 0.3rem;
-  padding-bottom: 6px;
-}
-.cart-add-Button button:hover {
-  box-shadow: 0 0 5px #ffcc70;
 }
 
-.cart-sub-total {
+.cart-quantity p {
+  font-size: 1.3rem;
+  font-weight: bolder;
   display: flex;
+  flex-direction: column;
+  width: 30%;
 
-  justify-content: center;
-
-  flex-direction: row-reverse;
-  padding: 2rem;
+  align-items: center;
 }
-
+.cart-buttons-area p {
+  font-size: 1.2rem;
+  border: solid black 1px;
+  margin: 0 1rem;
+  padding: 0.5rem;
+  text-align: center;
+  border-radius: 5px;
+}
+.cart-buttons-area-button {
+  background-color: #222;
+  height: 2rem;
+  width: 6rem;
+  border: 1px solid black;
+  border-radius: 5px;
+  color: #ffc75f;
+  font-size: 1.2rem;
+  font-weight: bolder;
+}
+/* ******************* subtotal ********************* */
+.cart-sub-total {
+  width: 25%;
+}
 .cart-non-empty {
-  margin: 5rem 0;
   font-size: 1.5rem;
   font-weight: bold;
-  border: 2px solid #222;
-  box-shadow: 0 0 5px #222;
-  width: 15rem;
+  border: 1px solid #222;
+  box-shadow: 0 0 0.2rem #222;
+  width: 20rem;
   height: 20rem;
+  margin-right: 2rem;
 }
 .cart-subtotal {
   background-color: #222;
   padding-top: 0.2rem;
   color: #ffcc70;
 }
-.cart-subtotal span {
+.cart-subtotal-header {
+  margin-top: 2rem;
+  font-size: 1.75rem;
+}
+.cart-subtotal p {
   background-color: white;
   display: flex;
   justify-content: center;
   color: #222;
   margin: 2rem 0;
-  padding: 2rem;
+  padding: 4rem 0 1.5rem 0;
+  font-size: 1.5rem;
+  font-weight: bolder;
 }
-.cart-non-empty .go-to-payment button {
+.go-to-payment button {
   background-color: #222;
   color: rgb(250, 202, 45);
-  border-radius: 5px;
-  width: 8rem;
+  border-radius: 20px;
+  width: 14rem;
   height: 3rem;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: bold;
   margin-bottom: 0.5rem;
+  border: black solid 1px;
 }
-.cart-non-empty .go-to-payment button:hover {
+.go-to-payment button:hover {
   background-color: rgb(250, 202, 45);
-  transform: scale(1.1);
+  transform: scale(1.05);
   color: #222;
   cursor: pointer;
+  font-weight: bolder;
+}
+.cart-back-to-list-wrapper {
+  display: flex;
+  padding: 3rem 6rem;
+  justify-content: flex-end;
 }
 .cart-back-to-list {
   justify-content: center;
   align-items: center;
   margin-bottom: 1rem;
 }
+
 .cart-back-to-list a {
   border: 2px solid black;
   color: black;
-  border-radius: 5px;
-  font-size: 1rem;
-  font-weight: bold;
+  border-radius: 17px;
+  font-size: 1.2rem;
+  font-weight: bolder;
   background-color: white;
   cursor: pointer;
   text-decoration: none;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 2.5rem;
+  width: 1rem;
 }
 .cart-back-to-list a:hover {
   box-shadow: 0 0 5px #222;

@@ -18,6 +18,9 @@
   justify-content: space-between;
   margin: 5rem 2rem;
 }
+.cart-empty p {
+  font-size: 2rem;
+}
 /* ******************* cart-items ********************* */
 .cart-item-details {
   display: flex;
@@ -85,6 +88,7 @@
   color: #ffc75f;
   font-size: 1.2rem;
   font-weight: bolder;
+  cursor: pointer;
 }
 /* ******************* subtotal ********************* */
 .cart-sub-total {

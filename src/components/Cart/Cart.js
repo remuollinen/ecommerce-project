@@ -12,7 +12,7 @@ const Cart = (props) => {
     <div className="cart-container">
       {cartItems.length === 0 && (
         <div className="cart-empty">
-          <p>Cart is empty</p>
+          <p>Your cart is empty</p>
         </div>
       )}
       <div className="cart-body">

@@ -114,6 +114,14 @@
 	height: 5rem;
 	font-size: 32px;
 	font-weight: bold;
+	transition: 0.2s ease-in-out;
+	cursor: pointer;
+	box-shadow: 0 0 5px #222;
+}
+
+.cart-button:hover {
+	background-color: rgb(250, 202, 45);
+	color: #222;
 }
 
 .single-product-image-wrapper {

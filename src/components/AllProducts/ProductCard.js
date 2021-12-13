@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./ProductsList.css";
+import Numeral from "react-numeral";
 
 const ProductCard = ({ id, image, title, price }) => {
 	return (
@@ -10,7 +11,7 @@ const ProductCard = ({ id, image, title, price }) => {
 			</div>
 			<div className="card-content">
 				<h3>{title}</h3>
-				<p>{price} €</p>
+				<p>{<Numeral value={price} format={"0.00a"} />} €</p>
 			</div>
 		</Link>
 	);

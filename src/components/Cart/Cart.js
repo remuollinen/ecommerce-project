@@ -1,15 +1,21 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Cart.css";
 import { Link } from "react-router-dom";
 import Numeral from "react-numeral";
 
 const Cart = (props) => {
-	const { cartItems, addItem, removeItem } = props;
+	const [cartItems, setCartItems] = useState([]);
+	const { addItem, removeItem } = props;
 	const subTotal = cartItems.reduce(
 		(actual, cummulator) => actual + cummulator.price * cummulator.quantity,
 		0
 	);
 
+	useEffect(() => {
+		fetch(`http://localhost:4000/api/cart`)
+			.then((res) => res.json())
+			.then((json) => setCartItems(json));
+	}, []);
 	return (
 		<div className="cart-container">
 			{cartItems.length === 0 && (

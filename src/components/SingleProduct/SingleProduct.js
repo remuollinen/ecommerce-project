@@ -10,7 +10,14 @@ class SingleProduct extends Component {
 	};
 
 	componentDidMount() {
-		fetch(`https://fakestoreapi.com/products/${this.props.params.id}`)
+		// fetch(`https://fakestoreapi.com/products/${this.props.params.id}`)
+		// 	.then((res) => res.json())
+		// 	.then((json) =>
+		// 		this.setState({
+		// 			singleProduct: json,
+		// 		})
+		// 	);
+		fetch(`http://localhost:4000/api/products/${this.props.params.id}`)
 			.then((res) => res.json())
 			.then((json) =>
 				this.setState({
@@ -21,6 +28,16 @@ class SingleProduct extends Component {
 	addToCart = (product) => {
 		this.props.getProductData(product);
 		snackbar.show("Added to cart!");
+		fetch("http://localhost:4000/api/cart", {
+			method: "POST",
+			mode: "cors",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify(product),
+		})
+			.then((res) => res.json())
+			.then((data) => console.log(data));
 	};
 	render() {
 		return (

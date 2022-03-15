@@ -9,11 +9,16 @@ class ProductsList extends Component {
 	};
 
 	componentDidMount() {
-		fetch("https://fakestoreapi.com/products")
+		// fetch("https://fakestoreapi.com/products")
+		// 	.then((res) => res.json())
+		// 	.then((json) => {
+		// 		this.setState({ data: json });
+		// 		// console.log(this.state.data);
+		// 	});
+		fetch("http://localhost:4000/api/products")
 			.then((res) => res.json())
 			.then((json) => {
 				this.setState({ data: json });
-				// console.log(this.state.data);
 			});
 	}
 

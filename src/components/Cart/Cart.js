@@ -5,11 +5,37 @@ import Numeral from "react-numeral";
 
 const Cart = (props) => {
 	const [cartItems, setCartItems] = useState([]);
-	const { addItem, removeItem } = props;
 	const subTotal = cartItems.reduce(
 		(actual, cummulator) => actual + cummulator.price * cummulator.quantity,
 		0
 	);
+
+	const addItemHandler = (product) => {
+		fetch(`http://localhost:4000/api/cart/${product}`, {
+			method: "PUT",
+			mode: "cors",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({ ...product, quantity: product.quantity++ }),
+		})
+			.then((res) => res.json())
+			.then((data) => console.log(data));
+	};
+	const removeItemHanlder = (product) => {
+		const productExist = cartItems.find((item) => item.id === product.id);
+		if (productExist.quantity === 1) {
+			setCartItems(cartItems.filter((item) => item.id !== product.id));
+		} else {
+			setCartItems(
+				cartItems.map((item) =>
+					item.id === product.id
+						? { ...productExist, quantity: productExist.quantity - 1 }
+						: item
+				)
+			);
+		}
+	};
 
 	useEffect(() => {
 		fetch(`http://localhost:4000/api/cart`)
@@ -40,14 +66,14 @@ const Cart = (props) => {
 								<div className="cart-buttons-area">
 									<button
 										className="cart-buttons-area-button"
-										onClick={() => addItem(item)}
+										onClick={() => addItemHandler(item)}
 									>
 										+
 									</button>
 									<p>{item.quantity}</p>
 									<button
 										className="cart-buttons-area-button"
-										onClick={() => removeItem(item)}
+										onClick={() => removeItemHanlder(item)}
 									>
 										-
 									</button>

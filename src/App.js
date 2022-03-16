@@ -13,10 +13,10 @@ import {
 import SingleProduct from "./components/SingleProduct/SingleProduct";
 import Cart from "./components/Cart/Cart";
 
-function RouteWrapper(props) {
+function RouteWrapper() {
 	const params = useParams();
 	const navigate = useNavigate();
-	return <SingleProduct params={params} {...props} navigate={navigate} />;
+	return <SingleProduct params={params} navigate={navigate} />;
 }
 
 const App = () => {

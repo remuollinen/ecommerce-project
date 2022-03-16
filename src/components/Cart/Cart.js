@@ -3,7 +3,7 @@ import "./Cart.css";
 import { Link } from "react-router-dom";
 import Numeral from "react-numeral";
 
-const Cart = (props) => {
+const Cart = () => {
 	const [cartItems, setCartItems] = useState([]);
 	const subTotal = cartItems.reduce(
 		(actual, cummulator) => actual + cummulator.price * cummulator.quantity,
@@ -12,7 +12,7 @@ const Cart = (props) => {
 
 	const addItemHandler = (product) => {
 		fetch(`http://localhost:4000/api/cart/${product}`, {
-			method: "PUT",
+			method: "PATCH",
 			mode: "cors",
 			headers: {
 				"Content-Type": "application/json",
@@ -22,7 +22,8 @@ const Cart = (props) => {
 			.then((res) => res.json())
 			.then((data) => console.log(data));
 	};
-	const removeItemHanlder = (product) => {
+
+	const removeItemHandler = (product) => {
 		const productExist = cartItems.find((item) => item.id === product.id);
 		if (productExist.quantity === 1) {
 			setCartItems(cartItems.filter((item) => item.id !== product.id));
@@ -42,6 +43,7 @@ const Cart = (props) => {
 			.then((res) => res.json())
 			.then((json) => setCartItems(json));
 	}, []);
+
 	return (
 		<div className="cart-container">
 			{cartItems.length === 0 && (
@@ -73,7 +75,7 @@ const Cart = (props) => {
 									<p>{item.quantity}</p>
 									<button
 										className="cart-buttons-area-button"
-										onClick={() => removeItemHanlder(item)}
+										onClick={() => removeItemHandler(item)}
 									>
 										-
 									</button>

@@ -11,8 +11,8 @@ const Cart = () => {
 	);
 
 	const addItemHandler = (product) => {
-		fetch(`http://localhost:4000/api/cart/${product}`, {
-			method: "PATCH",
+		fetch(`http://localhost:4000/api/cart`, {
+			method: "POST",
 			mode: "cors",
 			headers: {
 				"Content-Type": "application/json",
@@ -24,25 +24,23 @@ const Cart = () => {
 	};
 
 	const removeItemHandler = (product) => {
-		const productExist = cartItems.find((item) => item.id === product.id);
-		if (productExist.quantity === 1) {
-			setCartItems(cartItems.filter((item) => item.id !== product.id));
-		} else {
-			setCartItems(
-				cartItems.map((item) =>
-					item.id === product.id
-						? { ...productExist, quantity: productExist.quantity - 1 }
-						: item
-				)
-			);
-		}
+		fetch(`http://localhost:4000/api/cart`, {
+			method: "POST",
+			mode: "cors",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({ ...product, quantity: product.quantity-- }),
+		})
+			.then((res) => res.json())
+			.then((data) => console.log(data));
 	};
 
 	useEffect(() => {
 		fetch(`http://localhost:4000/api/cart`)
 			.then((res) => res.json())
 			.then((json) => setCartItems(json));
-	}, []);
+	}, [cartItems]);
 
 	return (
 		<div className="cart-container">
